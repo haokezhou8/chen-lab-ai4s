@@ -51,6 +51,7 @@
       <a href="index.html"        class="nav-link">Home</a>
       <a href="people.html"       class="nav-link">People</a>
       <a href="publications.html" class="nav-link">Publications</a>
+      <a href="#gallery"          class="nav-link">Gallery</a>
       <a href="openings.html"     class="nav-link">Openings</a>
       <a href="#contact"          class="nav-link">Contact</a>
     </div>
@@ -77,6 +78,7 @@
     <a href="index.html"        class="nav-link" role="menuitem">Home</a>
     <a href="people.html"       class="nav-link" role="menuitem">People</a>
     <a href="publications.html" class="nav-link" role="menuitem">Publications</a>
+    <a href="#gallery"          class="nav-link" role="menuitem">Gallery</a>
     <a href="openings.html"     class="nav-link" role="menuitem">Openings</a>
     <a href="#contact"          class="nav-link" role="menuitem">Contact</a>
   </div>
@@ -460,111 +462,89 @@
       </p>
     </div>
 
-    <!-- Horizontal Scrolling Gallery -->
-    <div class="gallery-scroll-wrapper">
-      <div class="gallery-scroll">
-        <div class="gallery-card">
-          <img src="assets/img/gathering/2026-1.jpg" alt="Jan 2026" loading="lazy">
-          <div class="gallery-card-overlay">
-            <span>Jan 2026</span>
-          </div>
-        </div>
-        <div class="gallery-card">
-          <img src="assets/img/gathering/2026-2.jpg" alt="Feb 2026" loading="lazy">
-          <div class="gallery-card-overlay">
-            <span>Feb 2026</span>
-          </div>
-        </div>
-        <div class="gallery-card">
-          <img src="assets/img/gathering/2026-3.jpg" alt="Mar 2026" loading="lazy">
-          <div class="gallery-card-overlay">
-            <span>Mar 2026</span>
-          </div>
-        </div>
-        <div class="gallery-card">
-          <img src="assets/img/gathering/2025-9.jpg" alt="Sep 2025" loading="lazy">
-          <div class="gallery-card-overlay">
-            <span>Sep 2025</span>
-          </div>
-        </div>
-        <div class="gallery-card">
-          <img src="assets/img/gathering/2025-11.jpg" alt="Nov 2025" loading="lazy">
-          <div class="gallery-card-overlay">
-            <span>Nov 2025</span>
-          </div>
-        </div>
-        <div class="gallery-card">
-          <img src="assets/img/gathering/2025-12.jpg" alt="Dec 2025" loading="lazy">
-          <div class="gallery-card-overlay">
-            <span>Dec 2025</span>
-          </div>
-        </div>
-        <div class="gallery-card">
-          <img src="assets/img/gathering/2025-2.jpg" alt="Feb 2025" loading="lazy">
-          <div class="gallery-card-overlay">
-            <span>Feb 2025</span>
-          </div>
-        </div>
-        <div class="gallery-card">
-          <img src="assets/img/gathering/2024-9.jpg" alt="Sep 2024" loading="lazy">
-          <div class="gallery-card-overlay">
-            <span>Sep 2024</span>
-          </div>
+    <!-- Grid Gallery -->
+    <div class="gallery-grid">
+      <div class="gallery-card">
+        <img src="assets/img/gathering/2026-1.jpg" alt="Jan 2026" loading="lazy">
+        <div class="gallery-card-overlay">
+          <span>Jan 2026</span>
         </div>
       </div>
-      
-      <!-- Scroll Indicator -->
-      <div class="gallery-scroll-indicator">
-        <div class="gallery-indicator-track">
-          <div class="gallery-indicator-fill"></div>
+      <div class="gallery-card">
+        <img src="assets/img/gathering/2026-2.jpg" alt="Feb 2026" loading="lazy">
+        <div class="gallery-card-overlay">
+          <span>Feb 2026</span>
         </div>
-        <p class="gallery-scroll-hint">← Scroll to view more →</p>
+      </div>
+      <div class="gallery-card">
+        <img src="assets/img/gathering/2026-3.jpg" alt="Mar 2026" loading="lazy">
+        <div class="gallery-card-overlay">
+          <span>Mar 2026</span>
+        </div>
+      </div>
+      <div class="gallery-card">
+        <img src="assets/img/gathering/2025-9.jpg" alt="Sep 2025" loading="lazy">
+        <div class="gallery-card-overlay">
+          <span>Sep 2025</span>
+        </div>
+      </div>
+      <div class="gallery-card">
+        <img src="assets/img/gathering/2025-11.jpg" alt="Nov 2025" loading="lazy">
+        <div class="gallery-card-overlay">
+          <span>Nov 2025</span>
+        </div>
+      </div>
+      <div class="gallery-card">
+        <img src="assets/img/gathering/2025-12.jpg" alt="Dec 2025" loading="lazy">
+        <div class="gallery-card-overlay">
+          <span>Dec 2025</span>
+        </div>
+      </div>
+      <div class="gallery-card">
+        <img src="assets/img/gathering/2025-2.jpg" alt="Feb 2025" loading="lazy">
+        <div class="gallery-card-overlay">
+          <span>Feb 2025</span>
+        </div>
+      </div>
+      <div class="gallery-card">
+        <img src="assets/img/gathering/2024-9.jpg" alt="Sep 2024" loading="lazy">
+        <div class="gallery-card-overlay">
+          <span>Sep 2024</span>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <style>
-.gallery-scroll-wrapper {
-  position: relative;
-  padding: 1rem 0;
-}
-.gallery-scroll {
-  display: flex;
+/* Grid Gallery */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.25rem;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  padding: 0.5rem 0.25rem;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-}
-.gallery-scroll::-webkit-scrollbar {
-  display: none;
+  padding: 0.5rem;
 }
 .gallery-card {
-  flex: 0 0 320px;
-  height: 240px;
   position: relative;
+  aspect-ratio: 4 / 3;
   border-radius: 12px;
   overflow: hidden;
-  scroll-snap-align: start;
   cursor: pointer;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .gallery-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 30px rgba(59, 130, 246, 0.3);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(59, 130, 246, 0.25);
 }
 .gallery-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.4s ease;
+  transition: transform 0.5s ease;
 }
 .gallery-card:hover img {
-  transform: scale(1.08);
+  transform: scale(1.1);
 }
 .gallery-card-overlay {
   position: absolute;
@@ -578,58 +558,25 @@
 }
 .gallery-card-overlay span {
   color: white;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 600;
   letter-spacing: 0.3px;
 }
-@media (max-width: 768px) {
-  .gallery-card {
-    flex: 0 0 260px;
-    height: 200px;
+@media (max-width: 1024px) {
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
-
-/* Gallery Scroll Indicator */
-.gallery-scroll-indicator {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 1.5rem;
-  gap: 0.75rem;
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
 }
-.gallery-indicator-track {
-  width: 120px;
-  height: 4px;
-  background: rgba(148, 163, 184, 0.2);
-  border-radius: 2px;
-  overflow: hidden;
-  position: relative;
-}
-.gallery-indicator-fill {
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 30%;
-  background: linear-gradient(90deg, #3b82f6, #60a5fa);
-  border-radius: 2px;
-  animation: scroll-indicator 3s ease-in-out infinite;
-}
-@keyframes scroll-indicator {
-  0% { left: -30%; }
-  50% { left: 100%; }
-  100% { left: -30%; }
-}
-.gallery-scroll-hint {
-  font-size: 0.75rem;
-  color: var(--color-text-muted);
-  letter-spacing: 0.5px;
-}
-[data-theme="light"] .gallery-indicator-track {
-  background: rgba(100, 116, 139, 0.2);
-}
-[data-theme="light"] .gallery-indicator-fill {
-  background: linear-gradient(90deg, #2563eb, #3b82f6);
+@media (max-width: 480px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
 }
 </style>
 
