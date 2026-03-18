@@ -5,50 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>People — Chen Lab @ HKUST</title>
   <meta name="description" content="Meet the team at Chen Lab — faculty, postdocs, and graduate students working at the intersection of AI and soft matter science." />
-
-  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       darkMode: ['attribute', '[data-theme="dark"]'],
-      theme: {
-        extend: {
-          colors: {
-            navy: { DEFAULT: '#0f172a', 800: '#1e293b', 700: '#334155' },
-            brand: { DEFAULT: '#3b82f6', 600: '#2563eb', 400: '#60a5fa' }
-          }
-        }
-      }
+      theme: { extend: { colors: { navy: { DEFAULT: '#0f172a', 800: '#1e293b', 700: '#334155' }, brand: { DEFAULT: '#3b82f6', 600: '#2563eb', 400: '#60a5fa' } } } }
     }
   </script>
-
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-
-  <!-- Custom CSS -->
   <link rel="stylesheet" href="css/custom.css" />
+  <style>
+    .person-photo { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; border: 3px solid rgba(59,130,246,0.3); flex-shrink: 0; }
+    .person-photo-lg { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; border: 3px solid rgba(59,130,246,0.4); flex-shrink: 0; }
+  </style>
 </head>
 <body>
 
-<!-- ============================================================
-     NAVIGATION
-     ============================================================ -->
 <nav id="navbar" role="navigation" aria-label="Main navigation">
   <div class="container flex items-center justify-between h-full">
-    <a href="index.html" class="nav-logo" aria-label="Chen Lab Home">
-      Chen<span style="color:#94a3b8">Lab</span>
-    </a>
-
+    <a href="index.html" class="nav-logo" aria-label="Chen Lab Home">Chen<span style="color:#94a3b8">Lab</span></a>
     <div id="desktop-nav" class="flex items-center gap-1">
-      <a href="index.html"        class="nav-link">Home</a>
-      <a href="people.html"       class="nav-link active">People</a>
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="people.html" class="nav-link active">People</a>
       <a href="publications.html" class="nav-link">Publications</a>
-      <a href="openings.html"     class="nav-link">Openings</a>
+      <a href="openings.html" class="nav-link">Openings</a>
       <a href="index.html#contact" class="nav-link">Contact</a>
     </div>
-
     <div class="flex items-center gap-2">
       <button id="theme-toggle" aria-label="Toggle dark/light mode">
         <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
@@ -59,88 +43,52 @@
       </button>
     </div>
   </div>
-
   <div id="mobile-nav" role="menu">
-    <a href="index.html"        class="nav-link" role="menuitem">Home</a>
-    <a href="people.html"       class="nav-link" role="menuitem">People</a>
+    <a href="index.html" class="nav-link" role="menuitem">Home</a>
+    <a href="people.html" class="nav-link active" role="menuitem">People</a>
     <a href="publications.html" class="nav-link" role="menuitem">Publications</a>
-    <a href="openings.html"     class="nav-link" role="menuitem">Openings</a>
+    <a href="openings.html" class="nav-link" role="menuitem">Openings</a>
     <a href="index.html#contact" class="nav-link" role="menuitem">Contact</a>
   </div>
 </nav>
 
-<!-- ============================================================
-     PAGE HEADER
-     ============================================================ -->
-<section class="page-header">
-  <div class="container text-center">
-    <p class="section-label" style="color: var(--color-blue-400);">Our Team</p>
-    <h1 class="page-title">People</h1>
-    <p class="page-subtitle">
-      A diverse group of researchers passionate about AI for Science and soft matter physics.
-    </p>
+<section class="page-header" style="padding: 5rem 0 3rem; text-align: center;">
+  <div class="container">
+    <p class="section-label" style="color: var(--color-blue-400); margin-bottom: 0.5rem;">Our Team</p>
+    <h1 class="page-title" style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; color: #f8fafc;">People</h1>
+    <p class="page-subtitle" style="color: #94a3b8; margin-top: 0.75rem;">A diverse group of researchers passionate about AI for Science and soft matter physics.</p>
   </div>
 </section>
 
-<!-- ============================================================
-     PI SECTION
-     ============================================================ -->
+<!-- PI SECTION -->
 <section class="section section-alt" id="pi">
   <div class="container">
     <p class="section-label mb-4">Principal Investigator</p>
-
     <div class="pi-card" style="max-width: 900px;">
-      <div class="grid md:grid-cols-[140px_1fr] gap-6">
-        <!-- Avatar -->
-        <div class="person-avatar-xl" style="background: linear-gradient(135deg, #1d4ed8, #4f46e5); width: 140px; height: 140px; font-size: 2.5rem;">
-          SC
-        </div>
-
-        <!-- Info -->
+      <div class="grid md:grid-cols-[160px_1fr] gap-6">
+        <img src="assets/img/css.png" alt="Dr. Shensheng Chen" class="person-photo-lg" />
         <div>
-          <h2 style="font-size:1.75rem; font-weight:700; color: var(--color-text); margin-bottom:0.25rem;">
-            Dr. Shensheng Chen
-          </h2>
-          <p class="person-role" style="font-size:1rem; margin-bottom:1rem;">
-            Assistant Professor · Department of Chemical & Biological Engineering
-          </p>
-
-          <p class="section-desc mb-4">
-            Dr. Chen leads the Chen Lab at HKUST, focusing on the intersection of computational science,
-            soft matter physics, and artificial intelligence. His research aims to unravel the fundamental
-            mechanisms of complex polymer systems and leverage these insights for materials design.
-          </p>
-
-          <!-- Background -->
+          <h2 style="font-size:1.75rem; font-weight:700; color: var(--color-text); margin-bottom:0.25rem;">Dr. Shensheng Chen</h2>
+          <p class="person-role" style="font-size:1rem; margin-bottom:1rem;">Assistant Professor · Department of Chemical & Biological Engineering</p>
+          <p class="section-desc mb-4">Dr. Chen leads the Chen Lab at HKUST, focusing on the intersection of computational science, soft matter physics, and artificial intelligence.</p>
           <div class="grid sm:grid-cols-3 gap-4 mb-4">
-            <div class="bg-slate-800/50 rounded-lg p-3" style="background: var(--color-bg-card); border: 1px solid var(--color-border);">
+            <div class="rounded-lg p-3" style="background: var(--color-bg-card); border: 1px solid var(--color-border);">
               <p style="font-size:0.75rem; color: var(--color-text-muted); margin-bottom:0.25rem;">Postdoc</p>
               <p style="font-size:0.85rem; color: var(--color-text); font-weight:500;">Caltech</p>
             </div>
-            <div class="bg-slate-800/50 rounded-lg p-3" style="background: var(--color-bg-card); border: 1px solid var(--color-border);">
+            <div class="rounded-lg p-3" style="background: var(--color-bg-card); border: 1px solid var(--color-border);">
               <p style="font-size:0.75rem; color: var(--color-text-muted); margin-bottom:0.25rem;">PhD</p>
               <p style="font-size:0.85rem; color: var(--color-text); font-weight:500;">SUNY</p>
             </div>
-            <div class="bg-slate-800/50 rounded-lg p-3" style="background: var(--color-bg-card); border: 1px solid var(--color-border);">
+            <div class="rounded-lg p-3" style="background: var(--color-bg-card); border: 1px solid var(--color-border);">
               <p style="font-size:0.75rem; color: var(--color-text-muted); margin-bottom:0.25rem;">Bachelor</p>
               <p style="font-size:0.85rem; color: var(--color-text); font-weight:500;">SJTU</p>
             </div>
           </div>
-
-          <!-- Links -->
           <div class="flex flex-wrap gap-2">
-            <a href="mailto:shensheng@ust.hk" class="btn-outline">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-              Email
-            </a>
-            <a href="https://scholar.google.com/citations?user=rODiYsoAAAAJ&hl=en" target="_blank" rel="noopener" class="btn-outline">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
-              Google Scholar
-            </a>
-            <a href="https://www.linkedin.com/in/shen-sheng/" target="_blank" rel="noopener" class="btn-outline">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-              LinkedIn
-            </a>
+            <a href="mailto:shensheng@ust.hk" class="btn-outline">Email</a>
+            <a href="https://scholar.google.com/citations?user=rODiYsoAAAAJ&hl=en" target="_blank" rel="noopener" class="btn-outline">Google Scholar</a>
+            <a href="https://www.linkedin.com/in/shen-sheng/" target="_blank" rel="noopener" class="btn-outline">LinkedIn</a>
           </div>
         </div>
       </div>
@@ -148,36 +96,23 @@
   </div>
 </section>
 
-<!-- ============================================================
-     POSTDOCS SECTION
-     ============================================================ -->
+<!-- POSTDOCS SECTION -->
 <section class="section" id="postdocs">
   <div class="container">
     <p class="section-label mb-6">Postdoctoral Researchers</p>
-
     <div class="grid md:grid-cols-2 gap-6">
       <div class="person-card">
         <div class="flex items-start gap-4">
-          <div class="person-avatar" style="background: linear-gradient(135deg, #0ea5e9, #06b6d4);">SS</div>
+          <img src="assets/img/bigsamiksha.png" alt="Dr. Samiksha Shrivastav" class="person-photo" />
           <div class="flex-1">
             <h3 class="person-name">Dr. Samiksha Shrivastav</h3>
             <p class="person-role">Postdoctoral Researcher</p>
             <div class="divider my-3"></div>
-            <p style="font-size:0.85rem; color: var(--color-text-muted); margin-bottom:0.5rem;">
-              <strong>Background:</strong> PhD from IIT (BHU) Varanasi, MSc & Bachelor from Bundelkhand University
-            </p>
-            <p style="font-size:0.85rem; color: var(--color-text-muted); margin-bottom:0.75rem;">
-              <strong>Research:</strong> Polymer and soft matter science, charged (ionic) systems, complex fluids and biocondensates
-            </p>
+            <p style="font-size:0.85rem; color: var(--color-text-muted); margin-bottom:0.5rem;"><strong>Background:</strong> PhD from IIT (BHU) Varanasi, MSc & Bachelor from Bundelkhand University</p>
+            <p style="font-size:0.85rem; color: var(--color-text-muted); margin-bottom:0.75rem;"><strong>Research:</strong> Polymer and soft matter science, charged (ionic) systems, complex fluids and biocondensates</p>
             <div class="flex flex-wrap gap-2">
-              <a href="mailto:kesamiksha@ust.hk" class="btn-outline" style="font-size:0.75rem; padding:0.25rem 0.625rem;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                Email
-              </a>
-              <a href="https://scholar.google.com/citations?hl=en&user=AuvrbZ4AAAAJ" target="_blank" rel="noopener" class="btn-outline" style="font-size:0.75rem; padding:0.25rem 0.625rem;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
-                Scholar
-              </a>
+              <a href="mailto:kesamiksha@ust.hk" class="btn-outline" style="font-size:0.75rem; padding:0.25rem 0.625rem;">Email</a>
+              <a href="https://scholar.google.com/citations?hl=en&user=AuvrbZ4AAAAJ" target="_blank" rel="noopener" class="btn-outline" style="font-size:0.75rem; padding:0.25rem 0.625rem;">Scholar</a>
             </div>
           </div>
         </div>
@@ -186,114 +121,73 @@
   </div>
 </section>
 
-<!-- ============================================================
-     PHD STUDENTS SECTION
-     ============================================================ -->
+<!-- PHD STUDENTS SECTION -->
 <section class="section section-alt" id="phd">
   <div class="container">
     <p class="section-label mb-6">PhD Students</p>
-
     <div class="grid md:grid-cols-2 gap-6">
 
-      <!-- Zongpei Wu -->
       <div class="person-card">
         <div class="flex items-start gap-4">
-          <div class="person-avatar" style="background: linear-gradient(135deg, #8b5cf6, #a855f7);">ZW</div>
+          <img src="assets/img/wzp.png" alt="Zongpei Wu" class="person-photo" />
           <div class="flex-1">
             <h3 class="person-name">Zongpei Wu</h3>
             <p class="person-role">PhD Student · Joined Sep 2024</p>
             <div class="divider my-3"></div>
-            <p style="font-size:0.85rem; color: var(--color-text-muted); margin-bottom:0.5rem;">
-              <strong>Background:</strong> MSc from Xiamen University, BSc from Shanghai Jiao Tong University
-            </p>
-            <p style="font-size:0.85rem; color: var(--color-text-muted); margin-bottom:0.75rem;">
-              <strong>Research:</strong> Coarse-grained MD simulations of liquid-liquid phase separated materials and their applications in bulk solutions and at interfaces
-            </p>
+            <p style="font-size:0.85rem; color: var(--color-text-muted); margin-bottom:0.5rem;"><strong>Background:</strong> MSc from Xiamen University, BSc from Shanghai Jiao Tong University</p>
+            <p style="font-size:0.85rem; color: var(--color-text-muted); margin-bottom:0.75rem;"><strong>Research:</strong> Coarse-grained MD simulations of liquid-liquid phase separated materials</p>
             <div class="flex flex-wrap gap-2">
-              <a href="mailto:zwudb@connect.ust.hk" class="btn-outline" style="font-size:0.75rem; padding:0.25rem 0.625rem;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                Email
-              </a>
-              <a href="https://scholar.google.com/citations?user=U9F-5O8AAAAJ&hl=en&oi=ao" target="_blank" rel="noopener" class="btn-outline" style="font-size:0.75rem; padding:0.25rem 0.625rem;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
-                Scholar
-              </a>
+              <a href="mailto:zwudb@connect.ust.hk" class="btn-outline" style="font-size:0.75rem; padding:0.25rem 0.625rem;">Email</a>
+              <a href="https://scholar.google.com/citations?user=U9F-5O8AAAAJ&hl=en&oi=ao" target="_blank" rel="noopener" class="btn-outline" style="font-size:0.75rem; padding:0.25rem 0.625rem;">Scholar</a>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Haoke Zhou -->
       <div class="person-card">
         <div class="flex items-start gap-4">
-          <div class="person-avatar" style="background: linear-gradient(135deg, #f59e0b, #f97316);">HZ</div>
+          <img src="assets/img/zhk.jpg" alt="Haoke Zhou" class="person-photo" />
           <div class="flex-1">
             <h3 class="person-name">Haoke Zhou</h3>
             <p class="person-role">PhD Student · Joined Sep 2024</p>
             <div class="divider my-3"></div>
-            <p style="font-size:0.85rem; color: var(--color-text-muted); margin-bottom:0.5rem;">
-              <strong>Background:</strong> BSc from Zhejiang University
-            </p>
-            <p style="font-size:0.85rem; color: var(--color-text-muted); margin-bottom:0.75rem;">
-              <strong>Research:</strong> Atomistic simulations and machine learning for protein-based materials; thermodynamics and dynamics for bioengineering and medical applications
-            </p>
+            <p style="font-size:0.85rem; color: var(--color-text-muted); margin-bottom:0.5rem;"><strong>Background:</strong> BSc from Zhejiang University</p>
+            <p style="font-size:0.85rem; color: var(--color-text-muted); margin-bottom:0.75rem;"><strong>Research:</strong> Atomistic simulations and ML for protein-based materials</p>
             <div class="flex flex-wrap gap-2">
-              <a href="mailto:hzhouck@connect.ust.hk" class="btn-outline" style="font-size:0.75rem; padding:0.25rem 0.625rem;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                Email
-              </a>
-              <a href="https://scholar.google.com/citations?user=rAB0SPYAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener" class="btn-outline" style="font-size:0.75rem; padding:0.25rem 0.625rem;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
-                Scholar
-              </a>
+              <a href="mailto:hzhouck@connect.ust.hk" class="btn-outline" style="font-size:0.75rem; padding:0.25rem 0.625rem;">Email</a>
+              <a href="https://scholar.google.com/citations?user=rAB0SPYAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener" class="btn-outline" style="font-size:0.75rem; padding:0.25rem 0.625rem;">Scholar</a>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Jiaxin Tian -->
       <div class="person-card">
         <div class="flex items-start gap-4">
-          <div class="person-avatar" style="background: linear-gradient(135deg, #ec4899, #f43f5e);">JT</div>
+          <img src="assets/img/tjx.jpg" alt="Jiaxin Tian" class="person-photo" />
           <div class="flex-1">
             <h3 class="person-name">Jiaxin Tian</h3>
             <p class="person-role">PhD Student · Joined Aug 2025</p>
             <div class="divider my-3"></div>
-            <p style="font-size:0.85rem; color: var(--color-text-muted); margin-bottom:0.5rem;">
-              <strong>Background:</strong> MSc from Shanghai University, BSc from Beijing Institute of Technology
-            </p>
-            <p style="font-size:0.85rem; color: var(--color-text-muted); margin-bottom:0.75rem;">
-              <strong>Research:</strong> Machine learning for molecule and polymer design, inspired by AlphaFold 3's breakthrough in protein structure prediction
-            </p>
+            <p style="font-size:0.85rem; color: var(--color-text-muted); margin-bottom:0.5rem;"><strong>Background:</strong> MSc from Shanghai University, BSc from Beijing Institute of Technology</p>
+            <p style="font-size:0.85rem; color: var(--color-text-muted); margin-bottom:0.75rem;"><strong>Research:</strong> ML for molecule and polymer design</p>
             <div class="flex flex-wrap gap-2">
-              <a href="mailto:jtianaq@connect.ust.hk" class="btn-outline" style="font-size:0.75rem; padding:0.25rem 0.625rem;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                Email
-              </a>
+              <a href="mailto:jtianaq@connect.ust.hk" class="btn-outline" style="font-size:0.75rem; padding:0.25rem 0.625rem;">Email</a>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Fuquan Luo -->
       <div class="person-card">
         <div class="flex items-start gap-4">
-          <div class="person-avatar" style="background: linear-gradient(135deg, #10b981, #14b8a6);">FL</div>
+          <img src="assets/img/fuquan.jpg" alt="Fuquan Luo" class="person-photo" />
           <div class="flex-1">
             <h3 class="person-name">Fuquan Luo</h3>
             <p class="person-role">PhD Student · Joined Feb 2026</p>
             <div class="divider my-3"></div>
-            <p style="font-size:0.85rem; color: var(--color-text-muted); margin-bottom:0.5rem;">
-              <strong>Background:</strong> MSc from Shanghai Jiao Tong University, BSc from China University of Petroleum (Beijing)
-            </p>
-            <p style="font-size:0.85rem; color: var(--color-text-muted); margin-bottom:0.75rem;">
-              <strong>Research:</strong> Ion transport mechanisms in polyelectrolytes and non-equilibrium dynamics features of ions and polymers using MD simulations
-            </p>
+            <p style="font-size:0.85rem; color: var(--color-text-muted); margin-bottom:0.5rem;"><strong>Background:</strong> MSc from Shanghai Jiao Tong University, BSc from China University of Petroleum (Beijing)</p>
+            <p style="font-size:0.85rem; color: var(--color-text-muted); margin-bottom:0.75rem;"><strong>Research:</strong> Ion transport in polyelectrolytes using MD simulations</p>
             <div class="flex flex-wrap gap-2">
-              <a href="mailto:fluoad@connect.ust.hk" class="btn-outline" style="font-size:0.75rem; padding:0.25rem 0.625rem;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                Email
-              </a>
+              <a href="mailto:fluoad@connect.ust.hk" class="btn-outline" style="font-size:0.75rem; padding:0.25rem 0.625rem;">Email</a>
             </div>
           </div>
         </div>
@@ -303,24 +197,19 @@
   </div>
 </section>
 
-<!-- ============================================================
-     MPHIL STUDENTS SECTION
-     ============================================================ -->
+<!-- MPHIL STUDENTS SECTION -->
 <section class="section" id="mphil">
   <div class="container">
     <p class="section-label mb-6">MPhil Students</p>
-
     <div class="grid md:grid-cols-2 gap-6">
       <div class="person-card">
         <div class="flex items-start gap-4">
-          <div class="person-avatar" style="background: linear-gradient(135deg, #6366f1, #8b5cf6);">CC</div>
+          <div class="person-photo" style="background: linear-gradient(135deg, #6366f1, #8b5cf6); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.5rem;">CC</div>
           <div class="flex-1">
             <h3 class="person-name">Chi Chung</h3>
             <p class="person-role">MPhil Student · Joined Feb 2026</p>
             <div class="divider my-3"></div>
-            <p style="font-size:0.85rem; color: var(--color-text-muted);">
-              Welcome to the lab! 🎉
-            </p>
+            <p style="font-size:0.85rem; color: var(--color-text-muted);">Welcome to the lab!</p>
           </div>
         </div>
       </div>
@@ -328,19 +217,12 @@
   </div>
 </section>
 
-<!-- ============================================================
-     FOOTER
-     ============================================================ -->
 <footer>
   <div class="container">
     <div class="grid md:grid-cols-4 gap-8 mb-8">
       <div class="md:col-span-2">
         <a href="index.html" class="footer-logo">ChenLab @ HKUST</a>
-        <p class="footer-desc mt-2">
-          AI for Science · Soft Matter · Molecular Simulation<br/>
-          Department of Chemical & Biological Engineering<br/>
-          Hong Kong University of Science and Technology
-        </p>
+        <p class="footer-desc mt-2">AI for Science · Soft Matter · Molecular Simulation<br/>Department of Chemical & Biological Engineering<br/>Hong Kong University of Science and Technology</p>
         <div class="flex gap-2 mt-4">
           <a href="https://www.linkedin.com/in/shen-sheng/" target="_blank" rel="noopener" class="footer-social" aria-label="LinkedIn">
             <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
@@ -348,21 +230,15 @@
           <a href="https://scholar.google.com/citations?user=rODiYsoAAAAJ&hl=en" target="_blank" rel="noopener" class="footer-social" aria-label="Google Scholar">
             <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
           </a>
-          <a href="#" class="footer-social" aria-label="GitHub">
-            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-          </a>
         </div>
       </div>
-
       <div>
         <p class="footer-heading">Navigation</p>
         <a href="index.html" class="footer-link">Home</a>
         <a href="people.html" class="footer-link">People</a>
         <a href="publications.html" class="footer-link">Publications</a>
         <a href="openings.html" class="footer-link">Openings</a>
-        <a href="index.html#contact" class="footer-link">Contact</a>
       </div>
-
       <div>
         <p class="footer-heading">Research</p>
         <a href="index.html#research" class="footer-link">Coacervates</a>
@@ -371,22 +247,18 @@
         <a href="index.html#research" class="footer-link">AI for Science</a>
       </div>
     </div>
-
     <hr class="footer-divider" />
-
     <div class="flex flex-col md:flex-row justify-between items-center gap-2">
       <p class="footer-copy">© 2024–2026 Chen Lab, HKUST. All rights reserved.</p>
-      <p class="footer-copy">Built with ❤️ · Clear Water Bay, Hong Kong</p>
+      <p class="footer-copy">Clear Water Bay, Hong Kong</p>
     </div>
   </div>
 </footer>
 
-<!-- Scroll to Top Button -->
 <button id="scroll-top" aria-label="Scroll to top">
   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
 </button>
 
-<!-- Main JS -->
 <script src="js/main.js"></script>
 </body>
 </html>
