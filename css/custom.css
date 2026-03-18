@@ -8,6 +8,12 @@
 
 /* ---------- CSS Custom Properties ---------- */
 :root {
+  --color-bg:        #ffffff;
+  --color-bg-alt:   #f8fafc;
+  --color-text:     #0f172a;
+  --color-text-muted: #64748b;
+  --color-border:   #e2e8f0;
+  
   --color-navy:      #0f172a;
   --color-navy-800:  #1e293b;
   --color-navy-700:  #334155;
@@ -53,6 +59,15 @@
   --color-text:      #0f172a;
   --color-text-muted:#64748b;
   --color-border:    #e2e8f0;
+}
+
+/* ---------- Page Title Styles ---------- */
+.page-title {
+  color: var(--color-text);
+}
+
+.page-subtitle {
+  color: var(--color-text-muted);
 }
 
 /* ---------- Base Reset ---------- */
@@ -360,6 +375,26 @@ body {
 }
 
 /* ---------- Section Layout ---------- */
+.page-header {
+  padding: 5rem 0 3rem;
+  text-align: center;
+}
+
+.page-header .section-label {
+  color: var(--color-blue);
+}
+
+.page-header .page-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+}
+
+.page-header .page-subtitle {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  margin-top: 0.75rem;
+}
+
 .section {
   padding: 5rem 0;
 }
