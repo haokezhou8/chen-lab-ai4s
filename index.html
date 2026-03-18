@@ -438,35 +438,44 @@
       </p>
     </div>
 
-    <div class="gallery-grid">
-      <div class="gallery-item">
-        <img src="assets/img/gathering/group-photo-1.jpg" alt="Team Photo" loading="lazy">
-        <div class="gallery-overlay">
-          <span class="gallery-caption">Team Photo</span>
+    <!-- Horizontal Scrolling Gallery -->
+    <div class="gallery-scroll-wrapper">
+      <div class="gallery-scroll">
+        <div class="gallery-card">
+          <img src="assets/img/gathering/group-photo-1.jpg" alt="Group Photo" loading="lazy">
+          <div class="gallery-card-overlay">
+            <span>Group Photo</span>
+          </div>
         </div>
-      </div>
-      <div class="gallery-item">
-        <img src="assets/img/gathering/activity-1.jpg" alt="Lab Activity" loading="lazy">
-        <div class="gallery-overlay">
-          <span class="gallery-caption">Celebration</span>
+        <div class="gallery-card">
+          <img src="assets/img/gathering/Weixin Image_20260318114401_53_23.jpg" alt="Lab Gathering" loading="lazy">
+          <div class="gallery-card-overlay">
+            <span>Lab Gathering</span>
+          </div>
         </div>
-      </div>
-      <div class="gallery-item">
-        <img src="assets/img/gathering/activity-2.jpg" alt="Lab Activity" loading="lazy">
-        <div class="gallery-overlay">
-          <span class="gallery-caption">Team Activity</span>
+        <div class="gallery-card">
+          <img src="assets/img/gathering/Weixin Image_20260318114404_54_23.jpg" alt="Celebration" loading="lazy">
+          <div class="gallery-card-overlay">
+            <span>Celebration</span>
+          </div>
         </div>
-      </div>
-      <div class="gallery-item">
-        <img src="assets/img/gathering/activity-3.jpg" alt="Lab Activity" loading="lazy">
-        <div class="gallery-overlay">
-          <span class="gallery-caption">Lab Life</span>
+        <div class="gallery-card">
+          <img src="assets/img/gathering/Weixin Image_20260318114457_55_23.jpg" alt="Team Activity" loading="lazy">
+          <div class="gallery-card-overlay">
+            <span>Team Activity</span>
+          </div>
         </div>
-      </div>
-      <div class="gallery-item">
-        <img src="assets/img/gathering/activity-4.jpg" alt="Lab Activity" loading="lazy">
-        <div class="gallery-overlay">
-          <span class="gallery-caption">Fun Moments</span>
+        <div class="gallery-card">
+          <img src="assets/img/gathering/Weixin Image_20260318114458_56_23.jpg" alt="Fun Moments" loading="lazy">
+          <div class="gallery-card-overlay">
+            <span>Fun Moments</span>
+          </div>
+        </div>
+        <div class="gallery-card">
+          <img src="assets/img/gathering/Weixin Image_20260318153847_63_23.jpg" alt="Lab Dinner" loading="lazy">
+          <div class="gallery-card-overlay">
+            <span>Lab Dinner</span>
+          </div>
         </div>
       </div>
     </div>
@@ -474,57 +483,67 @@
 </section>
 
 <style>
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: 200px;
-  gap: 1rem;
-}
-.gallery-item {
+.gallery-scroll-wrapper {
   position: relative;
-  border-radius: 8px;
-  overflow: hidden;
-  cursor: pointer;
+  padding: 1rem 0;
 }
-.gallery-item img {
+.gallery-scroll {
+  display: flex;
+  gap: 1.25rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 0.5rem 0.25rem;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.gallery-scroll::-webkit-scrollbar {
+  display: none;
+}
+.gallery-card {
+  flex: 0 0 320px;
+  height: 240px;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  scroll-snap-align: start;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.gallery-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(59, 130, 246, 0.3);
+}
+.gallery-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  transition: transform 0.4s ease;
 }
-.gallery-item:hover img {
-  transform: scale(1.05);
+.gallery-card:hover img {
+  transform: scale(1.08);
 }
-.gallery-item-large {
-  grid-column: span 2;
-  grid-row: span 2;
-}
-.gallery-overlay {
+.gallery-card-overlay {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 1rem;
-  background: linear-gradient(transparent, rgba(0,0,0,0.7));
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  padding: 1.25rem;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
+  display: flex;
+  align-items: flex-end;
 }
-.gallery-item:hover .gallery-overlay {
-  opacity: 1;
-}
-.gallery-caption {
+.gallery-card-overlay span {
   color: white;
-  font-size: 0.9rem;
-  font-weight: 500;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
 }
 @media (max-width: 768px) {
-  .gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 150px;
-  }
-  .gallery-item-large {
-    grid-column: span 2;
-    grid-row: span 2;
+  .gallery-card {
+    flex: 0 0 260px;
+    height: 200px;
   }
 }
 </style>
