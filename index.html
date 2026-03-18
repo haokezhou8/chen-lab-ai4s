@@ -199,10 +199,8 @@
       <!-- PI Card -->
       <div class="pi-card">
         <div class="flex items-start gap-4 mb-4">
-          <!-- Avatar with initials -->
-          <div class="person-avatar-lg" style="background: linear-gradient(135deg, #1d4ed8, #4f46e5);">
-            SC
-          </div>
+          <!-- Avatar with photo -->
+          <img src="assets/img/css.png" alt="Dr. Shensheng Chen" class="person-avatar-lg" style="border: 3px solid rgba(59,130,246,0.4);" />
           <div>
             <h3 style="font-size:1.2rem; font-weight:700; color: var(--color-text); margin-bottom:0.25rem;">
               Dr. Shensheng Chen
@@ -273,8 +271,8 @@
 
       <!-- Card 1: Polyelectrolyte Coacervates -->
       <div class="card">
-        <div class="research-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+        <div class="mb-4 overflow-hidden rounded-lg" style="height: 160px;">
+          <img src="assets/img/dpd.png" alt="Polyelectrolyte Coacervates" class="w-full h-full object-cover" />
         </div>
         <h3 class="research-title">Polyelectrolyte Complex Coacervates</h3>
         <p class="research-desc">
@@ -436,9 +434,119 @@
 
 
 <!-- ============================================================
+     LAB LIFE / GALLERY
+     ============================================================ -->
+<section class="section section-alt" id="gallery">
+  <div class="container">
+    <div class="text-center mb-10">
+      <p class="section-label">Lab Life</p>
+      <h2 class="section-title">Gallery</h2>
+      <p class="section-desc mx-auto">
+        Moments from our lab gatherings, celebrations, and team activities.
+      </p>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-item gallery-item-large">
+        <img src="assets/img/gathering/group-photo-2.jpg" alt="Lab Group Photo" loading="lazy">
+        <div class="gallery-overlay">
+          <span class="gallery-caption">Lab Gathering 2026</span>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="assets/img/gathering/group-photo-1.jpg" alt="Team Photo" loading="lazy">
+        <div class="gallery-overlay">
+          <span class="gallery-caption">Team Photo</span>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="assets/img/gathering/activity-1.jpg" alt="Lab Activity" loading="lazy">
+        <div class="gallery-overlay">
+          <span class="gallery-caption">Celebration</span>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="assets/img/gathering/activity-2.jpg" alt="Lab Activity" loading="lazy">
+        <div class="gallery-overlay">
+          <span class="gallery-caption">Team Activity</span>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="assets/img/gathering/activity-3.jpg" alt="Lab Activity" loading="lazy">
+        <div class="gallery-overlay">
+          <span class="gallery-caption">Lab Life</span>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="assets/img/gathering/activity-4.jpg" alt="Lab Activity" loading="lazy">
+        <div class="gallery-overlay">
+          <span class="gallery-caption">Fun Moments</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 200px;
+  gap: 1rem;
+}
+.gallery-item {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+.gallery-item-large {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+.gallery-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background: linear-gradient(transparent, rgba(0,0,0,0.7));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+.gallery-caption {
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 150px;
+  }
+  .gallery-item-large {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+}
+</style>
+
+<!-- ============================================================
      PUBLICATIONS HIGHLIGHT
      ============================================================ -->
-<section class="section section-alt" id="publications-highlight">
+<section class="section" id="publications-highlight">
   <div class="container">
     <div class="text-center mb-10">
       <p class="section-label">Selected Work</p>
@@ -454,17 +562,13 @@
           Nature Communications · 2026
         </div>
         <h3 class="pub-title">
-          Molecular Mechanisms of Liquid-Liquid Phase Separation in Polyelectrolyte Coacervates
+          Mixing protocols determine liquid–liquid phase separation dynamics in polyelectrolyte complex coacervation
         </h3>
         <p class="pub-authors">
-          Zongpei Wu, Shensheng Chen, <em>et al.</em>
+          Z Wu, ZG Wang, <strong>S Chen</strong>
         </p>
         <div class="flex gap-2 flex-wrap">
-          <a href="#" class="btn-outline" style="font-size:0.78rem; padding:0.3rem 0.75rem;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
-            PDF
-          </a>
-          <a href="#" class="btn-outline" style="font-size:0.78rem; padding:0.3rem 0.75rem;">
+          <a href="https://www.nature.com/articles/s41467-026-68296-5" target="_blank" rel="noopener" class="btn-outline" style="font-size:0.78rem; padding:0.3rem 0.75rem;">
             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
             DOI
           </a>
@@ -478,17 +582,13 @@
           Communications Chemistry · 2026
         </div>
         <h3 class="pub-title">
-          Atomistic Simulations and Machine Learning Reveal Protein Material Design Principles
+          Sequence–charge–structure relationship of intrinsically disordered protein condensates
         </h3>
         <p class="pub-authors">
-          Haoke Zhou, Shensheng Chen, <em>et al.</em>
+          H Zhou, <strong>S Chen</strong>
         </p>
         <div class="flex gap-2 flex-wrap">
-          <a href="#" class="btn-outline" style="font-size:0.78rem; padding:0.3rem 0.75rem;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
-            PDF
-          </a>
-          <a href="#" class="btn-outline" style="font-size:0.78rem; padding:0.3rem 0.75rem;">
+          <a href="https://www.nature.com/articles/s42004-025-01511-3" target="_blank" rel="noopener" class="btn-outline" style="font-size:0.78rem; padding:0.3rem 0.75rem;">
             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
             DOI
           </a>
